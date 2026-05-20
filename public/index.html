@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ PRIMARY SEO ═══ -->
+<title>MutualFundCompass — All Indian Mutual Funds | Direct Growth Plans Only</title>
+<meta name="description" content="Explore all Indian mutual funds — Direct Growth plans only. Live AUM, real returns from AMFI data, plain-English fund descriptions, side-by-side comparison. Free forever. No regular funds.">
+<meta name="keywords" content="mutual funds india, direct growth mutual funds, best mutual funds india 2025, SIP investment india, large cap funds, mid cap funds, small cap funds, ELSS tax saving funds, Parag Parikh, HDFC mutual fund, SBI mutual fund, Mirae Asset, Kotak Emerging, direct plan vs regular plan, expense ratio mutual fund, AUM india mutual fund">
+<link rel="canonical" href="https://mutualfundcompass.in/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="MutualFundCompass">
+
+<!-- ═══ OPEN GRAPH (WhatsApp, LinkedIn, Facebook previews) ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mutualfundcompass.in/">
+<meta property="og:title" content="MutualFundCompass — All Indian Mutual Funds, Direct Growth Only">
+<meta property="og:description" content="Explore every Direct Growth mutual fund in India. Live AUM, real returns, plain-English descriptions, side-by-side comparison. No regular funds. No jargon. Free.">
+<meta property="og:image" content="https://mutualfundcompass.in/og-image.png">
+<meta property="og:site_name" content="MutualFundCompass">
+<meta property="og:locale" content="en_IN">
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MutualFundCompass — Direct Growth Mutual Funds India">
+<meta name="twitter:description" content="Every Direct Growth fund in India. Live AUM, real returns, plain English. No regular funds.">
+<meta name="twitter:image" content="https://mutualfundcompass.in/og-image.png">
+
+<!-- ═══ JSON-LD STRUCTURED DATA ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "MutualFundCompass",
+  "url": "https://mutualfundcompass.in",
+  "description": "Free tool to explore all Indian Direct Growth mutual funds — live AUM, real returns from AMFI data, plain-English descriptions, side-by-side comparison.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "MutualFundCompass",
+    "url": "https://mutualfundcompass.in"
+  },
+  "keywords": "mutual funds india, direct growth, SIP, ELSS, large cap, mid cap, small cap"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Direct Growth mutual fund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Direct Growth mutual fund plan is one where you invest directly with the fund house — no distributor or agent involved. This means no commission, lower expense ratio, and significantly higher returns over time compared to Regular plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I choose Direct plans over Regular plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Regular plans pay a trail commission to distributors — typically 0.5% to 1.5% per year — deducted from your returns. On ₹10 lakh over 20 years, this difference can cost you ₹15+ lakh. Direct plans are identical in every way except they cost less."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AUM in mutual funds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AUM stands for Assets Under Management — the total money a mutual fund scheme is managing. Higher AUM generally indicates investor trust. India's largest actively managed fund, Parag Parikh Flexi Cap, crossed ₹1 lakh crore AUM in May 2025."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is expense ratio in mutual funds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The expense ratio (TER) is the annual fee a fund charges to manage your money, expressed as a percentage of AUM. It is automatically deducted from the fund's NAV daily. Lower expense ratios mean more of the returns stay with you."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');
+  function track(n,p){gtag('event',n,p||{});}
+</script>
+
+<script>
+  // Proxy for mfdata.in (which blocks direct browser calls)
+  // This Netlify function forwards requests and adds CORS headers
+  // On localhost: falls back gracefully — AUM loads from verified data only
+  const MFDATA_PROXY = '/.netlify/functions/mfdata';
+  
+  async function fetchMfdata(apiPath) {
+    try {
+      const res = await fetch(`${MFDATA_PROXY}?path=${encodeURIComponent(apiPath)}`);
+      if (!res.ok) return null;
+      return await res.json();
+    } catch(_) { return null; }
+  }
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fff;--bg2:#f7f7f5;--bg3:#f0f0ed;
+  --text:#1a1a1a;--text2:#5a5a5a;--text3:#999;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.15);
+  --blue:#185FA5;--blue-bg:#E6F1FB;--blue-text:#0C447C;
+  --green:#3B6D11;--green-bg:#EAF3DE;--green-text:#27500A;
+  --red:#A32D2D;--red-bg:#FCEBEB;--red-text:#791F1F;
+  --amber-bg:#FAEEDA;--amber-text:#633806;
+  --purple-bg:#EEEDFE;--purple-text:#3C3489;
+  --teal-bg:#E1F5EE;--teal-text:#085041;
+  --pink-bg:#FBEAF0;--pink-text:#72243E;
+  --r:8px;--rl:12px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1c1c1c;--bg2:#242424;--bg3:#2a2a2a;
+  --text:#f0f0f0;--text2:#a0a0a0;--text3:#666;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.16);
+  --blue-bg:#0C3660;--blue-text:#85B7EB;
+  --green-bg:#173404;--green-text:#97C459;
+  --red-bg:#3a1010;--red-text:#F09595;
+  --amber-bg:#2e1e04;--amber-text:#EF9F27;
+  --purple-bg:#1e1a40;--purple-text:#AFA9EC;
+  --teal-bg:#04201a;--teal-text:#5DCAA5;
+  --pink-bg:#2a0f1a;--pink-text:#ED93B1;
+}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg3);color:var(--text);min-height:100vh}
+nav{background:var(--bg);border-bottom:0.5px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100}
+.logo{font-size:15px;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-.3px}
+.logo span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.nav-r a{font-size:12px;color:var(--text2);text-decoration:none}
+.nav-cta{background:var(--blue);color:#fff!important;padding:5px 12px;border-radius:var(--r);font-weight:500}
+.prog-wrap{height:3px;position:sticky;top:52px;z-index:99}
+.prog{height:3px;background:var(--blue);width:0%;transition:width .4s ease}
+.cmp-bar{background:var(--blue);color:#fff;padding:9px 20px;display:none;align-items:center;gap:10px;flex-wrap:wrap;position:sticky;top:55px;z-index:90}
+.cmp-bar.show{display:flex}
+.cmp-lbl{font-size:11px;font-weight:600;opacity:.75;white-space:nowrap}
+.cmp-chips{display:flex;gap:5px;flex-wrap:wrap;flex:1}
+.chip{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.2);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:500;white-space:nowrap}
+.chip-x{background:none;border:none;color:#fff;cursor:pointer;font-size:13px;line-height:1;padding:0;opacity:.7}
+.chip-x:hover{opacity:1}
+.cmp-actions{display:flex;gap:7px;margin-left:auto;flex-shrink:0}
+.btn-cmp{background:#fff;color:var(--blue);border:none;border-radius:var(--r);padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer}
+.btn-clr{background:rgba(255,255,255,.15);color:#fff;border:0.5px solid rgba(255,255,255,.3);border-radius:var(--r);padding:6px 11px;font-size:12px;cursor:pointer}
+.hero{background:var(--bg);border-bottom:0.5px solid var(--border);padding:22px 20px 16px;text-align:center}
+.hero h1{font-size:22px;font-weight:700;letter-spacing:-.4px}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:13px;color:var(--text2);margin:6px auto 0;max-width:520px;line-height:1.6}
+.pills{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:9px}
+.pill{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px}
+.pill-g{background:var(--green-bg);color:var(--green-text);display:flex;align-items:center;gap:4px}
+.pill-b{background:var(--blue-bg);color:var(--blue-text)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.page-layout{display:flex;align-items:flex-start;max-width:1400px;margin:0 auto}
+.main{flex:1;min-width:0;padding:14px 16px 40px}
+.filters{background:var(--bg);border-radius:var(--rl);border:0.5px solid var(--border);padding:12px 14px;margin-bottom:10px}
+.search-wrap{position:relative;margin-bottom:10px}
+.search-wrap input{width:100%;padding:9px 12px 9px 34px;border:0.5px solid var(--border2);border-radius:var(--r);background:var(--bg);color:var(--text);font-size:13px;outline:none;transition:border-color .15s}
+.search-wrap input:focus{border-color:var(--blue)}
+.si{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px;pointer-events:none}
+.tab-row{display:flex;gap:4px;flex-wrap:wrap;align-items:center;margin-bottom:7px}
+.flabel{font-size:10px;color:var(--text3);font-weight:600;flex-shrink:0;margin-right:2px}
+.ftab{padding:4px 11px;border-radius:20px;font-size:11px;font-weight:500;cursor:pointer;border:0.5px solid var(--border2);background:var(--bg);color:var(--text2);transition:all .12s;user-select:none;white-space:nowrap}
+.ftab:hover{color:var(--text)}
+.ftab.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.ftdiv{width:1px;height:14px;background:var(--border2);margin:0 4px;flex-shrink:0}
+.sort-row{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-top:8px;padding-top:8px;border-top:0.5px solid var(--border)}
+.sort-row label{font-size:11px;color:var(--text3)}
+.srt{padding:3px 9px;font-size:11px;border-radius:var(--r);border:0.5px solid var(--border2);background:var(--bg);cursor:pointer;color:var(--text2);transition:all .12s;white-space:nowrap}
+.srt.on{border-color:var(--blue);color:var(--blue);font-weight:500;background:var(--blue-bg)}
+.status-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;gap:4px;flex-wrap:wrap}
+.count{font-size:12px;color:var(--text3)}
+.bg-note{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:5px}
+.bg-spin{width:10px;height:10px;border:1.5px solid var(--border2);border-top-color:var(--blue);border-radius:50%;animation:sp .8s linear infinite;display:none}
+.bg-spin.show{display:inline-block}
+@keyframes sp{to{transform:rotate(360deg)}}
+.tbl-wrap{overflow-x:auto;border-radius:var(--rl);border:0.5px solid var(--border);background:var(--bg)}
+table{width:100%;border-collapse:collapse;min-width:620px}
+thead th{padding:9px 12px;text-align:left;font-size:11px;font-weight:600;color:var(--text3);border-bottom:0.5px solid var(--border);background:var(--bg2);white-space:nowrap;cursor:pointer;user-select:none}
+thead th:hover{color:var(--text2)}
+thead th.sorted{color:var(--blue)}
+.arr{margin-left:2px;font-size:9px;opacity:.4}
+th.sorted .arr{opacity:1}
+tbody tr.ftr{border-bottom:0.5px solid var(--border);transition:background .1s;cursor:pointer}
+tbody tr.ftr:hover{background:var(--bg2)}
+tbody tr.ftr.active-row{background:var(--blue-bg)!important}
+tbody tr.ftr:last-of-type{border-bottom:none}
+td{padding:10px 12px;font-size:12px;vertical-align:middle}
+.td-chk{width:32px;text-align:center;padding:10px 4px}
+.cmp-cb{width:14px;height:14px;cursor:pointer;accent-color:var(--blue)}
+.td-name{min-width:160px;max-width:230px}
+.fname{font-size:12px;font-weight:600;color:var(--text);line-height:1.35}
+.fhouse{font-size:10px;color:var(--text3);margin-top:2px}
+.badge{display:inline-block;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:600;margin-top:3px}
+.b-Equity{background:var(--blue-bg);color:var(--blue-text)}
+.b-Debt{background:var(--teal-bg);color:var(--teal-text)}
+.b-Hybrid{background:var(--purple-bg);color:var(--purple-text)}
+.b-Index,.b-ETF{background:var(--amber-bg);color:var(--amber-text)}
+.b-FoF{background:var(--pink-bg);color:var(--pink-text)}
+.b-Solution,.b-Other{background:var(--bg2);color:var(--text3);border:0.5px solid var(--border2)}
+.td-nav{min-width:70px;font-weight:600}
+.td-ret{min-width:58px;font-weight:600;white-space:nowrap}
+.pos{color:var(--green)}
+.neg{color:var(--red)}
+.neu{color:var(--text3)}
+@keyframes shimmer{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}
+.loading-ret{color:var(--text3);font-size:11px;animation:shimmer 1.4s infinite}
+.info-dot{font-size:9px;color:var(--blue);margin-left:3px;opacity:.7}
+/* SIDE PANEL */
+.side-panel{width:0;overflow:hidden;transition:width .28s cubic-bezier(.4,0,.2,1);flex-shrink:0;position:sticky;top:58px;height:calc(100vh - 58px);z-index:50}
+.side-panel.open{width:380px}
+.panel-scroll{width:380px;height:100%;overflow-y:auto;background:var(--bg);border-left:0.5px solid var(--border)}
+.panel-hdr{padding:14px 18px 12px;border-bottom:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;position:sticky;top:0;background:var(--bg);z-index:1}
+.panel-name{font-size:13px;font-weight:700;line-height:1.4;flex:1;padding-right:10px;color:var(--text)}
+.panel-close{background:none;border:none;cursor:pointer;font-size:18px;color:var(--text3);padding:2px;line-height:1;flex-shrink:0}
+.panel-close:hover{color:var(--text)}
+.panel-body{padding:16px 18px 24px}
+.psec{margin-bottom:18px;padding-bottom:18px;border-bottom:0.5px solid var(--border)}
+.psec:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.psec-label{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.fund-desc{font-size:13px;color:var(--text2);line-height:1.75}
+.for-who{margin-top:10px;background:var(--green-bg);border-radius:var(--r);padding:10px 12px;font-size:12px;color:var(--green-text);line-height:1.6}
+.for-who strong{font-weight:600}
+.verified-badge{display:inline-flex;align-items:center;gap:4px;background:var(--green-bg);color:var(--green-text);font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;margin-bottom:8px}
+.unverified-note{background:var(--bg2);border-radius:var(--r);padding:10px 12px;font-size:12px;color:var(--text2);line-height:1.6;border:0.5px solid var(--border)}
+.ret-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.rg-cell{background:var(--bg2);border-radius:var(--r);padding:9px 10px;text-align:center}
+.rg-cell .rl{font-size:10px;color:var(--text3)}
+.rg-cell .rv{font-size:15px;font-weight:600;margin-top:2px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.meta-cell{background:var(--bg2);border-radius:var(--r);padding:9px 11px}
+.meta-cell .ml{font-size:10px;color:var(--text3)}
+.meta-cell .mv{font-size:13px;font-weight:600;margin-top:2px;color:var(--text)}
+.ter-good{color:var(--green)!important}
+.ter-note{font-size:10px;color:var(--text3);margin-top:2px;font-weight:400}
+.mgr-card{display:flex;gap:12px;align-items:flex-start}
+.mgr-av{width:38px;height:38px;border-radius:50%;background:var(--blue-bg);color:var(--blue-text);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.mgr-name{font-size:13px;font-weight:600}
+.mgr-exp{font-size:11px;color:var(--text3);margin-top:2px}
+.stags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+.stag{font-size:10px;padding:3px 8px;border-radius:20px;border:0.5px solid var(--border2);color:var(--text3)}
+.amfi-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--blue);text-decoration:none;padding:5px 10px;border:0.5px solid var(--blue-bg);border-radius:var(--r);background:var(--blue-bg);margin-top:4px}
+.amfi-link:hover{background:var(--blue);color:#fff}
+.panel-loading{display:flex;align-items:center;gap:8px;padding:20px 0;color:var(--text3);font-size:13px}
+.pspin{width:14px;height:14px;border:2px solid var(--border2);border-top-color:var(--blue);border-radius:50%;animation:sp .7s linear infinite;flex-shrink:0}
+.invest-row{display:flex;gap:8px;flex-wrap:wrap}
+.invest-btn{flex:1;text-align:center;padding:10px 14px;font-size:12px;font-weight:600;text-decoration:none;border-radius:var(--r)}
+.invest-primary{background:var(--blue);color:#fff}
+.invest-sec{background:var(--bg2);color:var(--text);border:0.5px solid var(--border2)}
+/* COMPARE MODAL */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200}
+.overlay.open{display:block}
+.modal{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:201;background:var(--bg);border-radius:var(--rl);border:0.5px solid var(--border);width:min(96vw,960px);max-height:90vh;overflow-y:auto}
+.modal.open{display:block}
+.modal-hdr{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:1}
+.modal-title{font-size:15px;font-weight:600}
+.modal-close{background:none;border:none;cursor:pointer;font-size:20px;color:var(--text2);line-height:1;padding:0}
+.modal-body{padding:16px 20px}
+.cmp-tbl{width:100%;border-collapse:collapse;font-size:12px}
+.cmp-tbl th,.cmp-tbl td{padding:9px 12px;border-bottom:0.5px solid var(--border);text-align:left;vertical-align:top}
+.cmp-tbl th{font-size:11px;font-weight:700;color:var(--text3);background:var(--bg2)}
+.cmp-row-lbl{font-size:11px;color:var(--text2);font-weight:600;background:var(--bg2)!important;white-space:nowrap;width:130px}
+.cmp-best{background:var(--green-bg)!important;font-weight:700;color:var(--green-text)!important}
+.cmp-worst{background:var(--red-bg)!important;color:var(--red-text)!important}
+.cmp-sec-hdr td{background:var(--bg3)!important;font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;padding:6px 12px}
+.modal-note{font-size:11px;color:var(--text3);margin-top:12px;line-height:1.7;padding:10px 12px;background:var(--bg2);border-radius:var(--r)}
+.pag{display:flex;gap:4px;justify-content:center;align-items:center;margin-top:14px;flex-wrap:wrap}
+.pg{padding:5px 10px;border:0.5px solid var(--border2);border-radius:var(--r);background:var(--bg);cursor:pointer;font-size:12px;color:var(--text2);transition:all .12s}
+.pg:hover{color:var(--text)}
+.pg.on{border-color:var(--blue);color:var(--blue);font-weight:600;background:var(--blue-bg)}
+.pg:disabled{opacity:.35;cursor:default}
+.pg-info{font-size:12px;color:var(--text3)}
+.gload{text-align:center;padding:56px 20px;background:var(--bg);border-radius:var(--rl)}
+.big-spin{width:32px;height:32px;border:3px solid var(--border2);border-top-color:var(--blue);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 12px}
+.gload p{font-size:14px;color:var(--text2)}
+.gload small{font-size:12px;display:block;margin-top:4px;color:var(--text3)}
+.err{background:var(--red-bg);color:var(--red-text);border-radius:var(--r);padding:12px 16px;font-size:13px}
+.empty{text-align:center;padding:40px;color:var(--text3);font-size:13px}
+.disclaimer{background:var(--bg);border:0.5px solid var(--border);border-left:3px solid var(--red);border-radius:var(--rl);padding:20px 22px;margin-top:18px}
+.disc-title{font-size:14px;font-weight:700;color:var(--red);margin-bottom:4px}
+.disc-sub{font-size:11px;color:var(--text3);margin-bottom:14px}
+.disc-body{font-size:13px;color:var(--text2);line-height:1.8}
+.disc-body p+p{margin-top:10px}
+.disc-body strong{color:var(--text);font-weight:600}
+.hl{background:var(--red-bg);color:var(--red-text);font-weight:600;padding:1px 6px;border-radius:4px}
+.disc-footer{margin-top:12px;padding-top:10px;border-top:0.5px solid var(--border);font-size:11px;color:var(--text3);line-height:1.7}
+.disc-footer a{color:var(--text3)}
+footer{background:var(--bg);border-top:0.5px solid var(--border);padding:16px 20px;text-align:center;font-size:11px;color:var(--text3);line-height:1.8}
+footer a{color:var(--text3)}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#">MutualFund<span>Compass</span></a>
+  <div class="nav-r">
+    <a href="https://www.amfiindia.com" target="_blank" rel="noopener">AMFI</a>
+    <a href="https://www.sebi.gov.in" target="_blank" rel="noopener">SEBI</a>
+    <a class="nav-cta" href="https://coin.zerodha.com" target="_blank" rel="noopener">Invest direct →</a>
+  </div>
+</nav>
+<div class="prog-wrap"><div class="prog" id="prog"></div></div>
+<div class="cmp-bar" id="cmpBar">
+  <span class="cmp-lbl">Comparing:</span>
+  <div class="cmp-chips" id="cmpChips"></div>
+  <div class="cmp-actions">
+    <button class="btn-cmp" onclick="openCompare()">Compare now →</button>
+    <button class="btn-clr" onclick="clearCompare()">Clear</button>
+  </div>
+</div>
+<div class="hero">
+  <h1>All Indian mutual funds<br><span>Direct Growth. Plain English.</span></h1>
+  <p>Click any fund for a plain-English description. Live NAV from AMFI, real returns from historical data, side-by-side comparison. No regular funds, ever.</p>
+  <div class="pills">
+    <div class="pill pill-g"><span class="dot"></span>Live · api.mfapi.in</div>
+    <div class="pill pill-b">Direct Growth only</div>
+    <div class="pill pill-b">Click any fund for details</div>
+  </div>
+</div>
+
+<div class="page-layout">
+  <div class="main" id="main">
+    <div class="filters">
+      <div class="search-wrap">
+        <span class="si">⌕</span>
+        <input type="text" id="searchInput" placeholder="Search — e.g. 'Parag Parikh', 'SBI small cap', 'Mirae large cap', 'HDFC mid cap'…" autocomplete="off">
+      </div>
+      <div class="tab-row" id="catTabs">
+        <span class="flabel">TYPE</span>
+        <button class="ftab" data-cat="all">All</button>
+        <button class="ftab on" data-cat="large cap">Large Cap</button>
+        <button class="ftab" data-cat="mid cap">Mid Cap</button>
+        <button class="ftab" data-cat="small cap">Small Cap</button>
+        <button class="ftab" data-cat="flexi cap">Flexi Cap</button>
+        <button class="ftab" data-cat="multi cap">Multi Cap</button>
+        <button class="ftab" data-cat="elss">ELSS</button>
+        <div class="ftdiv"></div>
+        <button class="ftab" data-cat="hybrid">Hybrid</button>
+        <button class="ftab" data-cat="balanced advantage">Bal. Advantage</button>
+        <div class="ftdiv"></div>
+        <button class="ftab" data-cat="liquid">Liquid</button>
+        <button class="ftab" data-cat="gilt">Gilt</button>
+        <button class="ftab" data-cat="debt">Debt</button>
+        <div class="ftdiv"></div>
+        <button class="ftab" data-cat="index">Index / ETF</button>
+        <button class="ftab" data-cat="fund of fund">Fund of Funds</button>
+      </div>
+      <div class="sort-row">
+        <label>Sort:</label>
+        <button class="srt on" data-sort="name">Name A–Z</button>
+        <button class="srt" data-sort="ret1y">1Y return ↓</button>
+        <button class="srt" data-sort="ret3y">3Y CAGR ↓</button>
+        <button class="srt" data-sort="ret5y">5Y CAGR ↓</button>
+        <button class="srt" data-sort="aum_desc">AUM ↓</button>
+        <button class="srt" data-sort="aum_asc">AUM ↑</button>
+        <button class="srt" data-sort="ter_asc">Expense ratio ↑</button>
+      </div>
+    </div>
+    <div class="status-bar">
+      <div class="count" id="countLine">Loading…</div>
+      <div class="bg-note"><span class="bg-spin" id="bgSpin"></span><span id="bgText"></span></div>
+    </div>
+    <div class="tbl-wrap" id="tblWrap">
+      <div class="gload"><div class="big-spin"></div><p>Fetching Direct Growth funds…</p><small>One request · usually under 3 seconds</small></div>
+    </div>
+    <div class="pag" id="pagination"></div>
+
+    <div class="disclaimer">
+      <div class="disc-title">🚫 Why this tool shows zero regular funds — and why you should never invest in one</div>
+      <div class="disc-sub">Our editorial position. We stand by it completely.</div>
+      <div class="disc-body">
+        <p>This tool shows <strong>Direct Growth plans only</strong>. No exceptions. Every Regular plan has an identical Direct counterpart — same fund manager, same stocks — but costs <span class="hl">0.5% to 1.5% more per year</span> as commission paid to whoever sold it to you.</p>
+        <p><strong>The maths is brutal.</strong> ₹10 lakh, 20 years, 12% gross returns. Direct at 0.5%: <span class="hl">₹89.2 lakh</span>. Regular at 1.5%: <span class="hl">₹73.7 lakh</span>. That's <span class="hl">₹15.5 lakh</span> gone — not to markets, to a salesperson.</p>
+        <p><strong>If you are in Regular plans right now: switch today.</strong> Most platforms allow direct switching without redemption. If you want advice, hire a <a href="https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognised=yes" target="_blank" style="color:var(--text2)">SEBI-registered RIA</a> — they charge a flat fee and are legally required to recommend Direct plans.</p>
+      </div>
+      <div class="disc-footer">Editorial opinion, not financial advice. Returns are historical. Investments subject to market risk. Data accuracy: TER figures sourced from Value Research, Groww, and AMC websites (May 2025–2026). SEBI updates TER quarterly — verify current rates on <a href="https://www.amfiindia.com/ter-of-mf-schemes" target="_blank">AMFI</a>.</div>
+    </div>
+  </div>
+
+  <div class="side-panel" id="sidePanel">
+    <div class="panel-scroll">
+      <div class="panel-hdr">
+        <div class="panel-name" id="panelName">Fund details</div>
+        <button class="panel-close" onclick="closePanel()">✕</button>
+      </div>
+      <div class="panel-body" id="panelBody">
+        <div class="panel-loading"><span class="pspin"></span>Loading…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeCompare()"></div>
+<div class="modal" id="modal">
+  <div class="modal-hdr">
+    <div class="modal-title">Side-by-side comparison</div>
+    <button class="modal-close" onclick="closeCompare()">✕</button>
+  </div>
+  <div class="modal-body" id="modalBody">
+    <div class="panel-loading"><span class="pspin"></span>Loading…</div>
+  </div>
+</div>
+
+<footer>
+  <div>Live NAV from <a href="https://api.mfapi.in" target="_blank">api.mfapi.in</a> · AMFI India · Updated daily</div>
+  <div>Returns calculated from real AMFI NAV history · TER verified from Value Research, Groww & AMC websites (May 2025–26) · Past performance ≠ future returns</div>
+  <div style="margin-top:4px"><a href="https://www.amfiindia.com" target="_blank">AMFI</a> &nbsp;·&nbsp; <a href="https://www.sebi.gov.in" target="_blank">SEBI</a> &nbsp;·&nbsp; <a href="https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognised=yes" target="_blank">Find a SEBI RIA</a></div>
+</footer>
+
+<script>
+// ─── VERIFIED FUND DATA ───────────────────────────────────────────────────
+// ALL data verified from primary sources: AMC websites, Value Research, Groww,
+// BusinessToday, Dezerv. TER sourced May 2025–2026. SEBI updates TER quarterly.
+// Matched by fund name (lowercase substring) — never by scheme code.
+// Only 11 funds with 100% verified data. All others show AMFI link.
+
+const FUND_DB = [
+  {
+    match: ["parag parikh flexi cap"],
+    ter: 0.62, ter_date: "May 2026", ter_source: "Dezerv, BusinessToday",
+    aum: 125800, aum_date: "May 2026", aum_note: "First actively managed fund in India to cross ₹1 lakh crore AUM",
+    manager: "Rajeev Thakkar, Raunak Onkar, Raj Mehta", mexp: "20+ years (Thakkar)",
+    style: ["Value investing", "Global exposure", "Long-term", "High conviction"],
+    desc: "India's most Warren Buffett-inspired fund. Invests in India's best companies AND global giants like Alphabet, Meta, and Amazon — giving you international diversification no other Indian equity fund offers. The lead manager has held some stocks for 10+ years and publishes a brutally honest monthly letter explaining every move he makes, including his mistakes.",
+    forWho: "For long-term investors who want a patient, quality-focused fund with global exposure, and who won't panic-sell when markets fall 30%. This is often the only equity fund serious long-term investors need."
+  },
+  {
+    match: ["axis bluechip", "axis large cap"],
+    ter: 0.62,
+    ter_date: "May 2026",
+    ter_source: "BusinessToday, Dezerv",
+    aum: 32420, aum_date: "Apr 2026", aum_note: "",
+    manager: "Shreyash Devalkar",
+    mexp: "15+ years",
+    style: ["Quality", "Large Cap", "Concentrated", "High conviction"],
+    desc: "Famously selective — holds just 25–35 stocks, all household names. When this manager likes a business, he buys a meaningful chunk, no half-measures. A very clean, concentrated portfolio of India's most trusted companies with a clear quality bias. Avoids cheap businesses with questionable governance.",
+    forWho: "For investors who want a focused, conviction-driven portfolio of India's best companies. The concentration is a feature, not a bug — it means every holding is a deliberate, high-confidence bet."
+  },
+  {
+    match: ["mirae asset large cap"],
+    ter: 0.55,
+    ter_date: "May 2025–2026",
+    ter_source: "Value Research (0.54%), Dhan (0.55%), BusinessToday (0.55%)",
+    aum: 41802, aum_date: "2025-26", aum_note: "",
+    manager: "Gaurav Misra",
+    mexp: "24+ years",
+    style: ["Growth", "Large Cap", "Diversified", "Bottom-up"],
+    desc: "Invests across India's top 100 companies — Reliance, TCS, HDFC Bank, Infosys. Lower drama than mid or small caps, steadier ride. The manager follows a disciplined bottom-up approach, holding companies with wide competitive moats and consistent earnings. One of the most consistently performing large cap funds over the past decade.",
+    forWho: "A solid starting point for anyone new to equity investing. If you're moving money out of FDs for the first time, this is a reasonable first step into equity markets."
+  },
+  {
+    match: ["hdfc top 100"],
+    ter: 0.53,
+    ter_date: "2025",
+    ter_source: "HDFC AMC (mfapi.in confirmed scheme code 125497)",
+    aum: 37800, aum_date: "2025", aum_note: "",
+    manager: "Rahul Baijal, Priya Ranjan",
+    mexp: "15+ years",
+    style: ["Large Cap", "Diversified", "Value-growth blend"],
+    desc: "One of India's oldest and most trusted large cap funds with a long performance track record across multiple market cycles. Invests strictly in the top 100 companies by market cap with a blend of value and growth considerations. Has delivered consistent long-term returns despite phases of underperformance relative to peers.",
+    forWho: "For investors who want a time-tested large cap fund from HDFC, one of India's most trusted AMCs. Works well as the stable core of a multi-fund portfolio."
+  },
+  {
+    match: ["sbi small cap"],
+    ter: 0.72,
+    ter_date: "May 2026",
+    ter_source: "BusinessToday (0.72%), Policybazaar (0.74%)",
+    aum: 34449, aum_date: "Mar 2026", aum_note: "Regularly restricts new SIPs to maintain portfolio quality — rare discipline in the industry",
+    manager: "R. Srinivasan (lead), Pradeep Kesavan",
+    mexp: "20+ years (Srinivasan)",
+    style: ["Small Cap", "Value", "Quality-first", "Long-term"],
+    desc: "One of the most disciplined small cap funds in India. The manager focuses on small companies with real earnings, low debt, and honest managements — not speculative ideas. Regularly closes to new SIPs when the fund becomes too large to invest efficiently in small cap stocks — a sign of integrity you rarely see from AMCs.",
+    forWho: "For patient, long-term investors (7+ year horizon) who want small cap exposure from a manager who won't chase momentum or sacrifice quality for AUM growth. Only invest money you can lock away for years."
+  },
+  {
+    match: ["hdfc mid cap opportunities", "hdfc mid-cap opportunities", "hdfc midcap opportunities"],
+    ter: 0.80,
+    ter_date: "May 2026",
+    ter_source: "Value Research (0.80%), Angel One (0.77%), BusinessToday (0.88%)",
+    aum: 85358, aum_date: "2026", aum_note: "India's largest mid cap fund by AUM",
+    manager: "Chirag Setalvad, Dhruv Muchhal",
+    mexp: "18+ years (Setalvad)",
+    style: ["Value", "Mid Cap", "Capital protection", "Conservative"],
+    desc: "Unlike most mid cap peers that chase momentum, this fund actively avoids highly leveraged, speculative businesses. May underperform in raging bull markets but tends to protect capital significantly better in downturns — the manager's disciplined value approach acts as a natural brake. India's largest mid cap fund by AUM.",
+    forWho: "For mid cap investors who prioritise not losing money over chasing maximum returns. The right choice if you want mid cap exposure from a conservative manager with a stellar multi-cycle track record."
+  },
+  {
+    match: ["kotak emerging equity", "kotak midcap fund"],
+    ter: 0.39,
+    ter_date: "March 2026",
+    ter_source: "BusinessToday (0.39%) — one of lowest TERs in mid cap category",
+    aum: 63539, aum_date: "May 2026", aum_note: "",
+    manager: "Pankaj Tibrewal",
+    mexp: "20+ years",
+    style: ["Growth", "Mid Cap", "Quality", "Low cost"],
+    desc: "Focuses on companies that are proven in their market but not yet scaled nationally — businesses on their way from regional to national champions. The manager has a strong track record and one of the lowest expense ratios in the entire mid cap category at just 0.39%. A high-quality fund at a genuinely low cost.",
+    forWho: "For investors with a 7+ year horizon who believe in India's domestic growth story. The combination of a skilled manager and very low TER makes this a strong mid cap choice."
+  },
+  {
+    match: ["nippon india small cap"],
+    ter: 0.68,
+    ter_date: "2025",
+    ter_source: "Value Research (0.65%), IndMoney (0.67%), BusinessToday (0.75%)",
+    aum: 65812, aum_date: "Mar 2026", aum_note: "India's largest small cap fund by AUM",
+    manager: "Samir Rachh",
+    mexp: "Managing this fund since Jan 2017",
+    style: ["Small Cap", "Diversified", "High conviction"],
+    desc: "India's largest small cap fund by AUM. Invests in hundreds of small companies across sectors, making it more diversified than many small cap peers. The manager has navigated multiple small cap cycles and has built a strong long-term return record. Has periodically restricted new SIPs when liquidity in small cap stocks became a concern.",
+    forWho: "Only invest money you absolutely will not need for 7+ years. Small caps can fall 50–60% in a crash and take years to recover. The long-term return premium is real — but only for investors with iron discipline."
+  },
+  {
+    match: ["hdfc balanced advantage"],
+    ter: 0.81,
+    ter_date: "April 2026",
+    ter_source: "Value Research (0.81%), MoneyWorks4Me (0.77%), BusinessToday (0.85%)",
+    aum: 105378, aum_date: "2026", aum_note: "India's largest mutual fund — over ₹1 lakh crore AUM",
+    manager: "Gopal Agrawal, Srinivasan Ramamurthy, Anil Bamboli",
+    mexp: "22+ years (Agrawal)",
+    style: ["Dynamic asset allocation", "Hybrid", "Cushioned equity"],
+    desc: "India's largest mutual fund by AUM (₹1 lakh+ Cr). Shifts between stocks and bonds automatically using proprietary valuation models — more stocks when markets are cheap, more bonds when expensive. Like a smart driver who slows down on wet roads without being asked. Takes much of the decision-making off your plate.",
+    forWho: "For investors who want equity growth but struggle to stay calm through market crashes. The automatic cushion reduces the emotional rollercoaster significantly. A great starting fund for someone nervous about pure equity."
+  },
+  {
+    match: ["parag parikh elss", "parag parikh tax saver", "ppfas elss"],
+    ter: 0.62,
+    ter_date: "2025",
+    ter_source: "PPFAS AMC official; AMFI ISIN code 147481 verified",
+    aum: 5617, aum_date: "May 2026", aum_note: "",
+    manager: "Rajeev Thakkar, Raj Mehta",
+    mexp: "20+ years (Thakkar)",
+    style: ["Value", "ELSS", "Global exposure", "Tax saving"],
+    desc: "The ELSS version of the Parag Parikh Flexi Cap — same philosophy, same global exposure, same quality bias. Invest up to ₹1.5 lakh per year and save tax under Section 80C. The 3-year lock-in is the shortest among all 80C instruments and is actually a feature — it forces the patience that this investment style requires to work.",
+    forWho: "For investors who need to use their 80C limit and want the best combination of tax saving + quality equity investment. If you like Parag Parikh Flexi Cap, this is its tax-saving sibling."
+  },
+  {
+    match: ["parag parikh liquid"],
+    ter: 0.08,
+    ter_date: "2025",
+    ter_source: "PPFAS AMC official; AMFI ISIN code 143269 verified",
+    aum: 1800, aum_date: "2025", aum_note: "",
+    manager: "Raj Mehta",
+    mexp: "12+ years",
+    style: ["Liquid", "Ultra short", "Cash parking", "Lowest TER"],
+    desc: "Park your idle cash here. One of the lowest TER liquid funds in India at just 0.08%. Returns slightly better than a savings account — and you can redeem within hours on any business day. Not for wealth creation. The waiting room for money you haven't yet decided where to deploy.",
+    forWho: "For anyone with cash sitting in a savings account earning 3–4% when it could earn 7%+ with virtually zero additional risk. Transfer in when idle, transfer out when you're ready to invest elsewhere."
+  },
+];
+
+// ─── NAME MATCHER ─────────────────────────────────────────────────────────
+// Match fund name from mfapi against our verified database
+// Uses lowercase substring matching — more reliable than scheme codes
+function matchFundInfo(fundName) {
+  const n = fundName.toLowerCase();
+  for (const entry of FUND_DB) {
+    if (entry.match.some(pattern => n.includes(pattern))) {
+      return entry;
+    }
+  }
+  return null;
+}
+
+// ─── CONFIG ────────────────────────────────────────────────────────────────
+const API     = 'https://api.mfapi.in';
+const PAGE_SZ = 40;
+const MAX_CMP = 4;
+const BG_BATCH = 6;
+
+// ─── STATE ─────────────────────────────────────────────────────────────────
+let allFunds=[], displayed=[], page=1;
+let activeCat='large cap', activeSort='name';
+let panelCode=null, compareSet=new Set();
+let navCache={}, histCache={}, retCache={};
+let bgQueue=[], bgRunning=false, navDateStr='';
+
+// ─── HELPERS ───────────────────────────────────────────────────────────────
+function setProgress(p){
+  const el=document.getElementById('prog');
+  el.style.width=p+'%';
+  if(p>=100)setTimeout(()=>{el.style.width='0%'},700);
+}
+
+function matchesCat(name,cat){
+  if(cat==='all')return true;
+  const n=name.toLowerCase();
+  if(cat==='index')return n.includes('index')||n.includes('etf')||n.includes('exchange traded');
+  if(cat==='fund of fund')return n.includes('fund of fund')||n.includes('overseas')||n.includes('international')||n.includes('global');
+  if(cat==='debt')return(n.includes('debt')||n.includes('bond')||n.includes('corporate')||n.includes('banking & psu')||n.includes('banking and psu')||n.includes('money market')||n.includes('ultra short')||n.includes('low duration')||n.includes('short duration')||n.includes('medium duration')||n.includes('long duration')||n.includes('dynamic bond')||n.includes('floating'))&&!n.includes('balanced')&&!n.includes('hybrid');
+  return n.includes(cat);
+}
+
+function inferBadge(name){
+  const n=name.toLowerCase();
+  if(n.includes('etf')||n.includes('exchange traded'))return'ETF';
+  if(n.includes('index'))return'Index';
+  if(n.includes('fund of fund')||n.includes('overseas')||n.includes('international')||n.includes('global'))return'FoF';
+  if(n.includes('liquid')||n.includes('overnight')||n.includes('money market')||n.includes('ultra short')||n.includes('low duration')||n.includes('short duration')||n.includes('medium duration')||n.includes('long duration')||n.includes('dynamic bond')||n.includes('gilt')||n.includes('corporate bond')||n.includes('credit risk')||n.includes('banking & psu')||n.includes('banking and psu')||n.includes('floater')||n.includes(' fmp')||n.includes('debt')||n.includes(' bond fund'))return'Debt';
+  if(n.includes('arbitrage')||n.includes('balanced')||n.includes('hybrid')||n.includes('equity savings')||n.includes('multi asset')||n.includes('dynamic asset'))return'Hybrid';
+  if(n.includes('retirement')||n.includes('children'))return'Solution';
+  return'Equity';
+}
+
+const BADGE_LABEL={Equity:'Equity',Debt:'Debt',Hybrid:'Hybrid',Index:'Index',ETF:'ETF',FoF:'Fund of Funds',Solution:'Solution',Other:'Other'};
+
+function fmtR(v){
+  if(v==null||isNaN(v))return'<span class="neu">—</span>';
+  const c=v>0?'pos':v<0?'neg':'neu';
+  return`<span class="${c}">${v>0?'+':''}${v.toFixed(1)}%</span>`;
+}
+function fmtNav(v){
+  if(!v&&v!==0)return'—';
+  return'₹'+v.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function fmtAUM(cr){
+  if(!cr)return null;
+  if(cr>=100000)return'₹'+(cr/100000).toFixed(2)+' lakh Cr';
+  if(cr>=1000)return'₹'+(cr/1000).toFixed(1)+'K Cr';
+  return'₹'+cr.toLocaleString('en-IN')+' Cr';
+}
+function initials(name){
+  return name.split(/[\s,]+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
+}
+
+// ─── LOAD ──────────────────────────────────────────────────────────────────
+async function loadAll(){
+  setProgress(10);
+  try{
+    const res=await fetch(`${API}/mf`);
+    if(!res.ok)throw new Error(`HTTP ${res.status}`);
+    setProgress(60);
+    const raw=await res.json();
+    allFunds=raw.filter(s=>{
+      const n=s.schemeName.toLowerCase();
+      return n.includes('direct')&&
+        (n.includes('growth')||/- gr$/.test(n)||/ gr$/.test(n.trim()))&&
+        !n.includes('idcw')&&!n.includes('dividend')&&!n.includes('bonus')&&
+        !n.includes('weekly')&&!n.includes('monthly')&&!n.includes('quarterly')&&
+        !n.includes('annual')&&!n.includes('payout')&&!n.includes('reinvest');
+    }).map(s=>({
+      code:s.schemeCode,
+      name:s.schemeName,
+      badge:inferBadge(s.schemeName),
+      info:matchFundInfo(s.schemeName) // name-based match, done once at load
+    }));
+    setProgress(80);
+    track('schemes_loaded',{total:allFunds.length,with_info:allFunds.filter(f=>f.info).length});
+    applyFilters();
+    setProgress(100);
+    // Pre-fetch AUM for top funds in background via proxy
+    prefetchAUMBackground();
+  }catch(e){
+    setProgress(0);
+    document.getElementById('tblWrap').innerHTML=`<div class="err">Could not load funds from api.mfapi.in. Check your connection and refresh. (${e.message})</div>`;
+    document.getElementById('countLine').textContent='Failed to load';
+  }
+}
+
+// ─── AUM FROM MFDATA.IN (via Netlify proxy) ───────────────────────────────
+// mfdata.in has live AUM + TER for all 14,000+ schemes
+// We fetch progressively — visible page first, rest in background
+// Falls back silently if proxy unavailable (e.g. local file open)
+
+const aumCache = {}; // code → {aum_cr, expense_ratio, category}
+
+async function fetchSchemeAUM(code) {
+  if (aumCache[code]) return aumCache[code];
+  const data = await fetchMfdata(`/api/v1/schemes/${code}`);
+  if (data?.status === 'success' && data?.data) {
+    aumCache[code] = data.data;
+    return data.data;
+  }
+  return null;
+}
+
+async function fetchAUMBatch(codes) {
+  const missing = codes.filter(c => !aumCache[c]);
+  if (!missing.length) return;
+  // Fetch 5 at a time — mfdata has rate limits
+  for (let i = 0; i < missing.length; i += 5) {
+    await Promise.all(missing.slice(i, i+5).map(async code => {
+      const d = await fetchSchemeAUM(code);
+      if (d) updateAUMCell(code, d);
+    }));
+    await new Promise(r => setTimeout(r, 200)); // small pause for rate limit
+  }
+}
+
+function updateAUMCell(code, mfdataEntry) {
+  const cell = document.getElementById(`aum-${code}`);
+  if (!cell) return;
+  const aum = mfdataEntry?.aum_cr;
+  if (aum) {
+    cell.innerHTML = fmtAUM(aum);
+    cell.title = `AUM: ₹${aum.toLocaleString('en-IN')} Cr (live from mfdata.in)`;
+  }
+  // Also update panel if open
+  if (panelCode === code) renderPanel(code);
+}
+
+let bgAUMRunning = false;
+async function prefetchAUMBackground() {
+  if (bgAUMRunning) return;
+  bgAUMRunning = true;
+  // Give mfapi NAV fetches priority — wait 3s before AUM background starts
+  await new Promise(r => setTimeout(r, 3000));
+  const codes = allFunds.map(f => f.code);
+  for (let i = 0; i < codes.length; i += 5) {
+    if (!bgAUMRunning) break;
+    await Promise.all(codes.slice(i, i+5).map(async code => {
+      const d = await fetchSchemeAUM(code);
+      if (d) updateAUMCell(code, d);
+    }));
+    await new Promise(r => setTimeout(r, 300));
+  }
+  bgAUMRunning = false;
+}
+
+// ─── RETURNS ───────────────────────────────────────────────────────────────
+function parseDD(s){const[d,m,y]=s.split('-');return new Date(`${y}-${m}-${d}`);}
+function calcRet(hist,months){
+  if(!hist||hist.length<5)return null;
+  const now=parseDD(hist[0].date),tgt=new Date(now);
+  tgt.setMonth(tgt.getMonth()-months);
+  let cl=null;for(const h of hist){if(parseDD(h.date)<=tgt){cl=h;break;}}
+  if(!cl||cl.nav===0)return null;
+  if(months>=24)return(Math.pow(hist[0].nav/cl.nav,12/months)-1)*100;
+  return((hist[0].nav-cl.nav)/cl.nav)*100;
+}
+async function fetchReturns(code){
+  if(retCache[code])return retCache[code];
+  try{
+    const r=await fetch(`${API}/mf/${code}`);
+    const d=await r.json();
+    if(d.status!=='SUCCESS'||!d.data?.length)return null;
+    const hist=d.data.map(x=>({date:x.date,nav:parseFloat(x.nav)}));
+    histCache[code]=hist;
+    navCache[code]={nav:hist[0].nav,date:hist[0].date};
+    if(!navDateStr){navDateStr=hist[0].date;document.getElementById('bgText').textContent=`NAV as of ${navDateStr}`;}
+    const ret={r1m:calcRet(hist,1),r6m:calcRet(hist,6),r1y:calcRet(hist,12),r3y:calcRet(hist,36),r5y:calcRet(hist,60),hist};
+    retCache[code]=ret;
+    return ret;
+  }catch(_){return null;}
+}
+async function fetchVisible(codes){
+  const miss=codes.filter(c=>!retCache[c]);if(!miss.length)return;
+  for(let i=0;i<miss.length;i+=8)await Promise.all(miss.slice(i,i+8).map(c=>fetchReturns(c).then(()=>updateRow(c))));
+}
+async function startBg(codes){
+  bgQueue=codes.filter(c=>!retCache[c]);
+  if(bgRunning||!bgQueue.length)return;
+  bgRunning=true;document.getElementById('bgSpin').classList.add('show');
+  while(bgQueue.length>0){
+    const batch=bgQueue.splice(0,BG_BATCH);
+    await Promise.all(batch.map(c=>fetchReturns(c).then(()=>updateRow(c))));
+    await new Promise(r=>setTimeout(r,100));
+  }
+  bgRunning=false;document.getElementById('bgSpin').classList.remove('show');
+  setTimeout(()=>{document.getElementById('bgText').textContent=navDateStr?`NAV as of ${navDateStr}`:'';},2000);
+}
+function updateRow(code){
+  const r1mEl=document.getElementById(`r1m-${code}`);if(!r1mEl)return;
+  const ret=retCache[code];if(!ret)return;
+  document.getElementById(`r1m-${code}`).innerHTML=fmtR(ret.r1m);
+  document.getElementById(`r1y-${code}`).innerHTML=fmtR(ret.r1y);
+  document.getElementById(`r3y-${code}`).innerHTML=fmtR(ret.r3y);
+  document.getElementById(`r5y-${code}`).innerHTML=fmtR(ret.r5y);
+  if(panelCode===code)renderPanel(code);
+}
+
+// ─── FILTERS ───────────────────────────────────────────────────────────────
+function applyFilters(){
+  const q=document.getElementById('searchInput').value.toLowerCase().trim();
+  displayed=allFunds.filter(f=>{
+    if(!matchesCat(f.name,activeCat))return false;
+    if(q)return q.split(' ').filter(Boolean).every(w=>f.name.toLowerCase().includes(w));
+    return true;
+  });
+  displayed.sort((a,b)=>{
+    if(activeSort==='name')return a.name.localeCompare(b.name);
+    if(activeSort==='aum_desc')return(aumCache[b.code]?.aum_cr||b.info?.aum||0)-(aumCache[a.code]?.aum_cr||a.info?.aum||0);
+    if(activeSort==='aum_asc')return(aumCache[a.code]?.aum_cr||a.info?.aum||0)-(aumCache[b.code]?.aum_cr||b.info?.aum||0);
+    if(activeSort==='ret1y')return(retCache[b.code]?.r1y??-999)-(retCache[a.code]?.r1y??-999);
+    if(activeSort==='ret3y')return(retCache[b.code]?.r3y??-999)-(retCache[a.code]?.r3y??-999);
+    if(activeSort==='ret5y')return(retCache[b.code]?.r5y??-999)-(retCache[a.code]?.r5y??-999);
+    if(activeSort==='ter_asc'){
+      const ta=a.info?.ter??99,tb=b.info?.ter??99;return ta-tb;
+    }
+    return 0;
+  });
+  page=1;renderPage();
+}
+
+// ─── RENDER TABLE ──────────────────────────────────────────────────────────
+function renderPage(){
+  const total=displayed.length;
+  const totalPages=Math.max(1,Math.ceil(total/PAGE_SZ));
+  if(page>totalPages)page=1;
+  document.getElementById('countLine').textContent=total?`${total.toLocaleString()} fund${total!==1?'s':''}`:'No funds match';
+  const slice=displayed.slice((page-1)*PAGE_SZ,page*PAGE_SZ);
+  renderTable(slice);renderPagination(totalPages);
+  fetchVisible(slice.map(f=>f.code)).then(()=>startBg(allFunds.map(f=>f.code)));
+  // Also fetch AUM for this page via proxy
+  fetchAUMBatch(slice.map(f=>f.code));
+}
+
+function renderTable(slice){
+  if(!slice.length){document.getElementById('tblWrap').innerHTML=`<div class="empty">No funds match. Try a different filter or search term.</div>`;return;}
+  const skel='<span class="loading-ret">…</span>';
+  const rows=slice.map(f=>{
+    const ret=retCache[f.code];
+    const inCmp=compareSet.has(f.code),isActive=panelCode===f.code;
+    return`<tr class="ftr${isActive?' active-row':''}" id="tr-${f.code}" onclick="openPanel(${f.code})">
+      <td class="td-chk" onclick="event.stopPropagation()">
+        <input type="checkbox" class="cmp-cb" ${inCmp?'checked':''} ${!inCmp&&compareSet.size>=MAX_CMP?'disabled':''}
+          onchange="toggleCompare(${f.code},this)" aria-label="Compare">
+      </td>
+      <td class="td-name">
+        <div class="fname">${f.name}${f.info?'<span class="info-dot" title="Verified description available">●</span>':''}</div>
+        <div class="fhouse">Code ${f.code}${
+          (aumCache[f.code]?.expense_ratio||f.info?.ter)?
+          ' · TER '+(aumCache[f.code]?.expense_ratio||f.info?.ter)+'%':''
+        }</div>
+        <span class="badge b-${f.badge}">${BADGE_LABEL[f.badge]||f.badge}</span>
+      </td>
+      <td class="td-nav" id="aum-${f.code}" title="AUM: Assets Under Management">${
+        aumCache[f.code]?.aum_cr ? fmtAUM(aumCache[f.code].aum_cr) :
+        f.info?.aum ? fmtAUM(f.info.aum) :
+        '<span class="loading-ret">…</span>'
+      }</td>
+      <td class="td-ret" id="r1m-${f.code}">${ret?fmtR(ret.r1m):skel}</td>
+      <td class="td-ret" id="r1y-${f.code}">${ret?fmtR(ret.r1y):skel}</td>
+      <td class="td-ret" id="r3y-${f.code}">${ret?fmtR(ret.r3y):skel}</td>
+      <td class="td-ret" id="r5y-${f.code}">${ret?fmtR(ret.r5y):skel}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('tblWrap').innerHTML=`<table>
+    <thead><tr>
+      <th style="width:32px"></th>
+      <th class="td-name${activeSort==='name'?' sorted':''}">Fund <span class="arr">↕</span></th>
+      <th class="${activeSort==='aum_desc'||activeSort==='aum_asc'?' sorted':''}">AUM <span class="arr">↕</span></th>
+      <th>1M</th>
+      <th class="${activeSort==='ret1y'?' sorted':''}">1Y <span class="arr">↕</span></th>
+      <th class="${activeSort==='ret3y'?' sorted':''}">3Y CAGR <span class="arr">↕</span></th>
+      <th class="${activeSort==='ret5y'?' sorted':''}">5Y CAGR <span class="arr">↕</span></th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+// ─── SIDE PANEL ────────────────────────────────────────────────────────────
+function openPanel(code){
+  if(panelCode===code){closePanel();return;}
+  panelCode=code;
+  const f=allFunds.find(x=>x.code===code);
+  document.getElementById('panelName').textContent=f?.name||'Fund details';
+  document.getElementById('panelBody').innerHTML='<div class="panel-loading"><span class="pspin"></span>Loading details…</div>';
+  document.getElementById('sidePanel').classList.add('open');
+  const slice=displayed.slice((page-1)*PAGE_SZ,page*PAGE_SZ);
+  renderTable(slice);
+  track('panel_open',{name:f?.name,code,has_info:!!f?.info});
+  fetchReturns(code).then(()=>renderPanel(code));
+}
+
+function renderPanel(code){
+  if(panelCode!==code)return;
+  const f=allFunds.find(x=>x.code===code);
+  const info=f?.info;
+  const ret=retCache[code];
+  const nav=navCache[code];
+  const hist=histCache[code];
+  let html='';
+
+  // Description section
+  html+=`<div class="psec">
+    <div class="psec-label">What this fund does</div>
+    ${info
+      ? `<div class="verified-badge">✓ Verified description</div>
+         <div class="fund-desc">${info.desc}</div>
+         <div class="for-who"><strong>Best for:</strong> ${info.forWho}</div>`
+      : `<div class="unverified-note">
+           We are building verified plain-English descriptions for all funds. This one is coming soon.<br><br>
+           For now, the return data below is live from AMFI. For fund details, visit:
+           <br><a class="amfi-link" href="https://www.amfiindia.com/nav-history-download" target="_blank" rel="noopener" style="margin-top:8px;display:inline-flex">View on AMFI →</a>
+         </div>`
+    }
+  </div>`;
+
+  // Returns
+  html+=`<div class="psec">
+    <div class="psec-label">Returns — live from AMFI NAV data</div>
+    ${ret
+      ? `<div class="ret-grid">
+           <div class="rg-cell"><div class="rl">1 Month</div><div class="rv">${fmtR(ret.r1m)}</div></div>
+           <div class="rg-cell"><div class="rl">6 Months</div><div class="rv">${fmtR(ret.r6m)}</div></div>
+           <div class="rg-cell"><div class="rl">1 Year</div><div class="rv">${fmtR(ret.r1y)}</div></div>
+           <div class="rg-cell"><div class="rl">3Y CAGR</div><div class="rv">${fmtR(ret.r3y)}</div></div>
+           <div class="rg-cell"><div class="rl">5Y CAGR</div><div class="rv">${fmtR(ret.r5y)}</div></div>
+           <div class="rg-cell"><div class="rl">Latest NAV</div><div class="rv" style="font-size:12px">${nav?fmtNav(nav.nav):'—'}</div></div>
+         </div>
+         ${hist?`<div style="font-size:11px;color:var(--text3);margin-top:8px">
+           Inception: <strong>${fmtNav(hist[hist.length-1]?.nav)}</strong> on ${hist[hist.length-1]?.date}
+           · ${hist.length.toLocaleString()} trading days of data
+         </div>`:''}
+        `
+      : `<div class="panel-loading"><span class="pspin"></span>Fetching return history…</div>`
+    }
+  </div>`;
+
+  // Fund details
+  html+=`<div class="psec">
+    <div class="psec-label">Fund details</div>
+    <div class="meta-grid">`;
+  const liveTER = aumCache[code]?.expense_ratio;
+  if(liveTER || info?.ter!=null){
+    const ter = liveTER || info?.ter;
+    const terSource = liveTER ? 'live · mfdata.in' : `${info?.ter_source} · as of ${info?.ter_date}`;
+    const isLive = !!liveTER;
+    html+=`<div class="meta-cell">
+      <div class="ml">Expense ratio (TER) ${isLive?'<span style="color:var(--green);font-size:9px;font-weight:600">● LIVE</span>':''}</div>
+      <div class="mv ter-good">${ter}% per year
+        <div class="ter-note">Source: ${terSource}. SEBI updates quarterly — verify on <a href="https://www.amfiindia.com/ter-of-mf-schemes" target="_blank" style="color:var(--text3)">AMFI</a>.</div>
+      </div>
+    </div>`;
+  } else {
+    html+=`<div class="meta-cell">
+      <div class="ml">Expense ratio (TER)</div>
+      <div class="mv" style="font-size:11px;margin-top:6px">
+        <a class="amfi-link" href="https://www.amfiindia.com/ter-of-mf-schemes" target="_blank" rel="noopener">View current TER on AMFI →</a>
+      </div>
+    </div>`;
+  }
+  html+=`<div class="meta-cell"><div class="ml">Scheme code</div><div class="mv">${code}</div></div>
+    <div class="meta-cell"><div class="ml">Type</div><div class="mv">${BADGE_LABEL[f?.badge]||'—'}</div></div>
+    <div class="meta-cell"><div class="ml">Plan</div><div class="mv ter-good">Direct Growth ✓</div></div>
+    ${(()=>{
+      const liveAUM = aumCache[code]?.aum_cr;
+      const verifiedAUM = info?.aum;
+      const displayAUM = liveAUM || verifiedAUM;
+      if(!displayAUM) return '';
+      const isLive = !!liveAUM;
+      const dateLabel = isLive ? 'live · mfdata.in' : `as of ${info?.aum_date||'2025-26'}`;
+      return `<div class="meta-cell" style="grid-column:span 2">
+        <div class="ml">AUM (Assets Under Management) ${isLive?'<span style="color:var(--green);font-size:9px;font-weight:600">● LIVE</span>':''}</div>
+        <div class="mv" style="color:var(--blue)">${fmtAUM(displayAUM)}
+          <span style="font-size:11px;color:var(--text3);font-weight:400">${dateLabel}</span>
+          ${info?.aum_note?`<div style="font-size:11px;color:var(--green-text);font-weight:500;margin-top:3px">★ ${info.aum_note}</div>`:''}
+        </div>
+      </div>`;
+    })()}
+  </div></div>`;
+
+  // Manager (only if verified)
+  if(info?.manager){
+    html+=`<div class="psec">
+      <div class="psec-label">Fund manager</div>
+      <div class="mgr-card">
+        <div class="mgr-av">${initials(info.manager)}</div>
+        <div>
+          <div class="mgr-name">${info.manager}</div>
+          <div class="mgr-exp">${info.mexp}</div>
+        </div>
+      </div>
+      <div class="stags">${info.style.map(s=>`<span class="stag">${s}</span>`).join('')}</div>
+    </div>`;
+  }
+
+  // TER plain English (only if verified)
+  if(info?.ter!=null){
+    const cost=(info.ter*10).toFixed(1);
+    html+=`<div class="psec">
+      <div class="psec-label">What ${info.ter}% TER means in rupees</div>
+      <div class="fund-desc">On ₹10 lakh invested over 20 years, this fund's expense ratio costs you roughly <strong>₹${cost} lakh</strong> in total. This is already deducted from the daily NAV — you never write a cheque. This is why Direct plans can save ₹10–15 lakh over Regular plans on the same investment over 20 years.</div>
+    </div>`;
+  }
+
+  // Invest CTAs
+  html+=`<div class="invest-row">
+    <a href="https://coin.zerodha.com" target="_blank" rel="noopener" class="invest-btn invest-primary">Invest via Zerodha →</a>
+    <a href="https://kuvera.in" target="_blank" rel="noopener" class="invest-btn invest-sec">Invest via Kuvera →</a>
+  </div>`;
+
+  document.getElementById('panelBody').innerHTML=html;
+}
+
+function closePanel(){
+  panelCode=null;
+  document.getElementById('sidePanel').classList.remove('open');
+  const slice=displayed.slice((page-1)*PAGE_SZ,page*PAGE_SZ);
+  renderTable(slice);
+}
+
+// ─── COMPARE ───────────────────────────────────────────────────────────────
+function toggleCompare(code,el){
+  if(el.checked){if(compareSet.size>=MAX_CMP){el.checked=false;alert(`Max ${MAX_CMP} funds at a time.`);return;}compareSet.add(code);track('cmp_add',{code});}
+  else{compareSet.delete(code);}
+  updateCmpBar();const slice=displayed.slice((page-1)*PAGE_SZ,page*PAGE_SZ);renderTable(slice);
+}
+function updateCmpBar(){
+  const bar=document.getElementById('cmpBar');
+  if(compareSet.size===0){bar.classList.remove('show');return;}
+  bar.classList.add('show');
+  document.getElementById('cmpChips').innerHTML=[...compareSet].map(code=>{
+    const f=allFunds.find(x=>x.code===code);
+    const label=f?f.name.replace(/(Direct|Growth|Plan|-)/gi,' ').replace(/\s+/g,' ').trim().slice(0,26):code;
+    return`<span class="chip">${label}<button class="chip-x" onclick="removeCompare(${code})">×</button></span>`;
+  }).join('');
+}
+function removeCompare(code){compareSet.delete(code);updateCmpBar();const s=displayed.slice((page-1)*PAGE_SZ,page*PAGE_SZ);renderTable(s);}
+function clearCompare(){compareSet.clear();updateCmpBar();const s=displayed.slice((page-1)*PAGE_SZ,page*PAGE_SZ);renderTable(s);}
+
+async function openCompare(){
+  if(compareSet.size<2){alert('Select at least 2 funds to compare.');return;}
+  document.getElementById('overlay').classList.add('open');
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('modalBody').innerHTML='<div class="panel-loading" style="padding:24px"><span class="pspin"></span>Fetching return data…</div>';
+  track('cmp_view',{funds:[...compareSet]});
+
+  const funds=[...compareSet].map(c=>allFunds.find(f=>f.code===c)).filter(Boolean);
+  const rets=await Promise.all(funds.map(f=>fetchReturns(f.code)));
+  const cols=funds.length;
+
+  let html=`<div style="overflow-x:auto"><table class="cmp-tbl"><thead><tr>
+    <th class="cmp-row-lbl">Metric</th>
+    ${funds.map(f=>`<th style="min-width:140px">${f.name.replace(/(Direct|Growth|Plan|-)/gi,' ').replace(/\s+/g,' ').trim()}</th>`).join('')}
+  </tr></thead><tbody>`;
+
+  // Basics
+  html+=`<tr class="cmp-sec-hdr"><td colspan="${cols+1}">Basics</td></tr>`;
+  html+=`<tr><td class="cmp-row-lbl">Category</td>${funds.map(f=>`<td>${BADGE_LABEL[f.badge]||'—'}</td>`).join('')}</tr>`;
+  html+=`<tr><td class="cmp-row-lbl">Scheme code</td>${funds.map(f=>`<td>${f.code}</td>`).join('')}</tr>`;
+  html+=`<tr><td class="cmp-row-lbl">Plan</td>${funds.map(()=>`<td style="color:var(--green);font-weight:600">Direct Growth ✓</td>`).join('')}</tr>`;
+
+  // Cost — most important, shown first
+  html+=`<tr class="cmp-sec-hdr"><td colspan="${cols+1}">Cost — lower is ALWAYS better</td></tr>`;
+  const terVals=funds.map(f=>f.info?.ter??null);
+  const minTer=terVals.filter(v=>v!==null).length>0?Math.min(...terVals.filter(v=>v!==null)):null;
+  html+=`<tr><td class="cmp-row-lbl">Expense ratio (TER)</td>`;
+  funds.forEach((f,i)=>{
+    const ter=f.info?.ter;
+    const isBest=ter!=null&&ter===minTer&&cols>1&&terVals.filter(v=>v!==null).length>1;
+    html+=`<td${isBest?' class="cmp-best"':''}>${ter!=null
+      ?`${ter}%<br><small style="font-size:10px;font-weight:400;color:var(--text3)">${f.info.ter_source}<br>as of ${f.info.ter_date}</small>`
+      :`<a href="https://www.amfiindia.com/ter-of-mf-schemes" target="_blank" style="color:var(--blue);font-size:11px">View on AMFI →</a>`
+    }</td>`;
+  });
+  html+=`</tr>`;
+
+  // NAV
+  html+=`<tr class="cmp-sec-hdr"><td colspan="${cols+1}">NAV</td></tr>`;
+  html+=`<tr><td class="cmp-row-lbl">AUM</td>${funds.map(f=>{
+    const live=aumCache[f.code]?.aum_cr, verified=f.info?.aum;
+    const aum=live||verified;
+    const label=live?'live':'as of '+(f.info?.aum_date||'2025');
+    return`<td>${aum?fmtAUM(aum)+'<br><small style="font-size:10px;color:var(--text3)">'+label+'</small>':'—'}</td>`;
+  }).join('')}</tr>`;
+  html+=`<tr><td class="cmp-row-lbl">Latest NAV</td>${funds.map(f=>`<td>${navCache[f.code]?fmtNav(navCache[f.code].nav):'—'}</td>`).join('')}</tr>`;
+  html+=`<tr><td class="cmp-row-lbl">NAV date</td>${funds.map(f=>`<td>${navCache[f.code]?.date||'—'}</td>`).join('')}</tr>`;
+
+  // Returns
+  html+=`<tr class="cmp-sec-hdr"><td colspan="${cols+1}">Returns — higher is better (CAGR for 3Y & 5Y)</td></tr>`;
+  [['1 Month','r1m'],['6 Months','r6m'],['1 Year','r1y'],['3 Year CAGR','r3y'],['5 Year CAGR','r5y']].forEach(([label,key])=>{
+    const vals=rets.map(r=>r?.[key]??null);
+    const maxV=Math.max(...vals.filter(v=>v!=null&&!isNaN(v)));
+    const minV=Math.min(...vals.filter(v=>v!=null&&!isNaN(v)));
+    html+=`<tr><td class="cmp-row-lbl">${label}</td>`;
+    funds.forEach((f,i)=>{
+      const v=vals[i];
+      const isBest=v!=null&&v===maxV&&cols>1&&isFinite(maxV)&&vals.filter(x=>x!=null).length>1;
+      const isWorst=v!=null&&v===minV&&cols>1&&isFinite(minV)&&minV!==maxV&&vals.filter(x=>x!=null).length>1;
+      html+=`<td${isBest?' class="cmp-best"':isWorst?' class="cmp-worst"':''}>${fmtR(v)}</td>`;
+    });
+    html+=`</tr>`;
+  });
+
+  // History
+  html+=`<tr class="cmp-sec-hdr"><td colspan="${cols+1}">Fund history</td></tr>`;
+  html+=`<tr><td class="cmp-row-lbl">Inception NAV</td>${funds.map(f=>{const h=histCache[f.code];return`<td>${h?fmtNav(h[h.length-1]?.nav):'—'}</td>`;}).join('')}</tr>`;
+  html+=`<tr><td class="cmp-row-lbl">Inception date</td>${funds.map(f=>{const h=histCache[f.code];return`<td>${h?h[h.length-1]?.date:'—'}</td>`;}).join('')}</tr>`;
+  html+=`<tr><td class="cmp-row-lbl">Data (days)</td>${funds.map(f=>{const h=histCache[f.code];return`<td>${h?h.length.toLocaleString():'—'}</td>`;}).join('')}</tr>`;
+
+  // Manager
+  if(funds.some(f=>f.info?.manager)){
+    html+=`<tr class="cmp-sec-hdr"><td colspan="${cols+1}">Fund manager (verified funds only)</td></tr>`;
+    html+=`<tr><td class="cmp-row-lbl">Manager</td>${funds.map(f=>`<td>${f.info?.manager||'—'}</td>`).join('')}</tr>`;
+  }
+
+  html+=`</tbody></table></div>
+  <div class="modal-note">
+    🟢 Green = best for that metric. 🔴 Red = lowest. For expense ratio: green = lowest cost (always better for you).
+    Returns calculated from real AMFI historical NAV data. TER verified from Value Research, Groww & AMC websites.
+    SEBI updates TER quarterly — always verify current rates on AMFI before investing.
+  </div>`;
+  document.getElementById('modalBody').innerHTML=html;
+}
+
+function closeCompare(){
+  document.getElementById('overlay').classList.remove('open');
+  document.getElementById('modal').classList.remove('open');
+}
+
+// ─── PAGINATION ────────────────────────────────────────────────────────────
+function renderPagination(totalPages){
+  const pag=document.getElementById('pagination');
+  if(totalPages<=1){pag.innerHTML='';return;}
+  const W=7;let s=Math.max(1,page-Math.floor(W/2)),e=Math.min(totalPages,s+W-1);
+  if(e-s<W-1)s=Math.max(1,e-W+1);
+  let h=`<button class="pg" ${page===1?'disabled':''} onclick="goPage(${page-1})">← Prev</button>`;
+  if(s>1)h+=`<button class="pg" onclick="goPage(1)">1</button>${s>2?'<span class="pg-info">…</span>':''}`;
+  for(let i=s;i<=e;i++)h+=`<button class="pg${i===page?' on':''}" onclick="goPage(${i})">${i}</button>`;
+  if(e<totalPages)h+=`${e<totalPages-1?'<span class="pg-info">…</span>':''}<button class="pg" onclick="goPage(${totalPages})">${totalPages}</button>`;
+  h+=`<button class="pg" ${page===totalPages?'disabled':''} onclick="goPage(${page+1})">Next →</button>`;
+  h+=`<span class="pg-info">Page ${page} of ${totalPages}</span>`;
+  pag.innerHTML=h;
+}
+function goPage(n){panelCode=null;page=n;renderPage();window.scrollTo({top:0,behavior:'smooth'});track('page_change',{page:n});}
+
+// ─── EVENTS ────────────────────────────────────────────────────────────────
+let searchT;
+document.getElementById('searchInput').addEventListener('input',()=>{
+  clearTimeout(searchT);
+  searchT=setTimeout(()=>{track('search',{q:document.getElementById('searchInput').value});applyFilters();},280);
+});
+document.getElementById('catTabs').addEventListener('click',e=>{
+  const btn=e.target.closest('.ftab');if(!btn)return;
+  activeCat=btn.dataset.cat;
+  document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  track('cat_filter',{cat:activeCat});applyFilters();
+});
+document.querySelectorAll('.srt').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    activeSort=btn.dataset.sort;
+    document.querySelectorAll('.srt').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    track('sort_change',{sort:activeSort});applyFilters();
+  });
+});
+[30,60,120,300].forEach(s=>setTimeout(()=>track('time_on_page',{seconds:s}),s*1000));
+let mx=0;
+window.addEventListener('scroll',()=>{
+  const p=Math.round(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100);
+  if(p>mx+24){mx=p;track('scroll_depth',{pct:Math.min(p,100)});}
+},{passive:true});
+const t0=Date.now();
+window.addEventListener('beforeunload',()=>track('session_end',{seconds:Math.round((Date.now()-t0)/1000)}));
+
+loadAll();
+</script>
+</body>
+</html>

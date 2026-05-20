@@ -1,0 +1,58 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#f0f0ed"/>
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="#185FA5"/>
+
+  <!-- Main card -->
+  <rect x="60" y="60" width="1080" height="510" rx="16" fill="#ffffff" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+
+  <!-- Logo -->
+  <text x="100" y="160" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="56" font-weight="700" letter-spacing="-1" fill="#1a1a1a">MutualFund</text>
+  <text x="524" y="160" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="56" font-weight="700" letter-spacing="-1" fill="#185FA5">Compass</text>
+
+  <!-- Tagline -->
+  <text x="100" y="212" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="26" font-weight="400" fill="#5a5a5a">All Indian mutual funds. Direct Growth only. Plain English.</text>
+
+  <!-- Divider -->
+  <line x1="100" y1="248" x2="1100" y2="248" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+
+  <!-- Stat card 1 -->
+  <rect x="100" y="278" width="280" height="130" rx="12" fill="#E6F1FB"/>
+  <text x="140" y="326" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="42" font-weight="700" fill="#185FA5">2,500+</text>
+  <text x="140" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="18" fill="#0C447C">Direct Growth funds</text>
+  <text x="140" y="384" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="14" fill="#0C447C">All categories · All AMCs</text>
+
+  <!-- Stat card 2 -->
+  <rect x="420" y="278" width="280" height="130" rx="12" fill="#EAF3DE"/>
+  <text x="460" y="326" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="42" font-weight="700" fill="#3B6D11">Live</text>
+  <text x="460" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="18" fill="#27500A">AUM · Returns · TER</text>
+  <text x="460" y="384" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="14" fill="#27500A">From AMFI · Updated daily</text>
+
+  <!-- Stat card 3 -->
+  <rect x="740" y="278" width="360" height="130" rx="12" fill="#FAEEDA"/>
+  <text x="780" y="326" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="42" font-weight="700" fill="#633806">Zero</text>
+  <text x="780" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="18" fill="#633806">Regular funds shown</text>
+  <text x="780" y="384" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="14" fill="#633806">Direct plans save ₹15L+ over 20 yrs</text>
+
+  <!-- Feature pills -->
+  <rect x="100" y="432" width="228" height="40" rx="20" fill="#f7f7f5" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+  <text x="214" y="458" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="500" fill="#5a5a5a" text-anchor="middle">Plain English descriptions</text>
+
+  <rect x="348" y="432" width="196" height="40" rx="20" fill="#f7f7f5" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+  <text x="446" y="458" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="500" fill="#5a5a5a" text-anchor="middle">Side-by-side compare</text>
+
+  <rect x="564" y="432" width="180" height="40" rx="20" fill="#f7f7f5" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+  <text x="654" y="458" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="500" fill="#5a5a5a" text-anchor="middle">Free · No login</text>
+
+  <rect x="764" y="432" width="192" height="40" rx="20" fill="#f7f7f5" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+  <text x="860" y="458" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="500" fill="#5a5a5a" text-anchor="middle">Real AMFI data</text>
+
+  <!-- URL + live dot -->
+  <text x="100" y="530" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="18" font-weight="500" fill="#185FA5">mutualfundcompass.in</text>
+  <circle cx="1060" cy="527" r="6" fill="#3B6D11"/>
+  <text x="1076" y="533" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="500" fill="#3B6D11">Live data</text>
+
+</svg>
